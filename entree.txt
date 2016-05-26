@@ -1,0 +1,3 @@
+eeeeeeeeeeeee
+
+gcc -Wall -o test_module_e_s test_module_e_s.c ../module_mem/module_mem.o module_e_s.o

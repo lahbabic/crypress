@@ -1,0 +1,22 @@
+#!/bin/bash
+cd module_huffman
+make
+make install
+printf '\n'
+cd ..
+cd module_e_s
+make
+make install
+printf '\n'
+cd ..
+cd module_transfo
+make
+make install
+printf '\n'
+cd ..
+cd module_mem
+make
+make install
+printf '\n'
+cd ..
+

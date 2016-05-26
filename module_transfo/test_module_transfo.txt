@@ -1,0 +1,50 @@
+#include "module_transfo.h"
+struct 	tabs_s
+{
+    int sot; // size of tabs
+    char *te; //tabs entrée
+    int *ti; //tabs int
+    int *tb; //tab binaire
+    char *ts;
+    int sots;
+    int* tsh;
+    int sotsh;
+};
+typedef struct tabs_s *tabs;
+struct code_s{
+	int* b;
+	char c;
+	int sob;
+	int id;
+	struct code_s *suivant;
+};
+typedef struct code_s *code;
+
+
+int int main(int argc, char const *argv[])
+{
+	tabs t;
+	t=(tabs)malloc(sizeof(struct code_s));
+	t->ts=(char*)malloc(3*sizeof(char));
+	t->ts[0]='a';
+	t->ts[1]='b';
+	t->ts[2]='c';
+	t->te=(char*)malloc(2*sizeof(char));
+	t->te[0]='a';
+	t->te[1]='b';
+	t=binaire(t);
+	code c;
+	c=(code)malloc(sizeof(struct code_s));
+	c->c='a';
+	c->sob=1;
+	c->b=(int*)malloc(sizeof(int));
+	c->b[0]=0;
+	c->suivant=(code)malloc(sizeof(struct code_s));
+	c->suivant->c='b';
+	c->suivant->sob=1;
+	c->suivant->b=(int*)malloc(sizeof(int));
+	c->suivant->b[0]=1;
+	t=codage(t,c);
+	non_ambigu(c);
+	return 0;
+}
