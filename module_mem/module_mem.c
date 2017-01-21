@@ -10,7 +10,7 @@ dont_now_type mem_remem_tabs(void *tab, char *type, int size)
 		if((size==0))
 			tab = (int*)malloc(sizeof(int));
 		else if(size!=0){
-			char *t1;
+			int *t1;
 			t1 = realloc(tab,size*sizeof(int));
 			if(t1==NULL)
 				free(tab);
